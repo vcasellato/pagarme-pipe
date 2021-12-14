@@ -5,6 +5,6 @@ resource "aws_s3_bucket" "s3_logs" {
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    Logs = "Logs for Codebuild"
+    Logs        = "Logs for Codebuild"
   }
 }

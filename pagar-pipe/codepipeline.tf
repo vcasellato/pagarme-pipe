@@ -38,7 +38,7 @@ resource "aws_codepipeline" "tf_codepipeline" {
       version         = "1"
 
       configuration = {
-        
+
 
         ProjectName = local.codebuild_project_terraform_plan_name
       }
@@ -69,7 +69,7 @@ resource "aws_codepipeline" "tf_codepipeline" {
       version         = "1"
 
       configuration = {
-        
+
         ProjectName = local.codebuild_project_terraform_apply_name
       }
     }

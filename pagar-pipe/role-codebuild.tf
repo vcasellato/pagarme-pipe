@@ -14,7 +14,9 @@ resource "aws_iam_role" "codebuild" {
         "codepipeline.amazonaws.com",
         "codecommit.amazonaws.com",
         "s3.amazonaws.com",
-        "ec2.amazonaws.com"
+        "ec2.amazonaws.com",
+        "vpc.amazonaws.com,
+        "ecs.amazonaws.com"
         ]
       },
       "Action": "sts:AssumeRole"
@@ -134,6 +136,21 @@ resource "aws_iam_policy_attachment" "codebuild_vpc_policy" {
   name       = "${local.build_name}-VPCFullAccess"
   roles      = [aws_iam_role.codebuild.name]
   policy_arn = "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
+
+  lifecycle {
+    ignore_changes = [
+      users,
+      groups,
+      roles,
+    ]
+  }
+}
+
+
+resource "aws_iam_policy_attachment" "codebuild_ecs_policy" {
+  name       = "${local.build_name}-ECSFullAccess"
+  roles      = [aws_iam_role.codebuild.name]
+  policy_arn = "arn:aws:iam::aws:policy/AmazonECS_FullAccess"
 
   lifecycle {
     ignore_changes = [
