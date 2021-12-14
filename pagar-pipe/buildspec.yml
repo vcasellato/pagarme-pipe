@@ -13,9 +13,6 @@ phases:
     commands:
 
       - terraform --version
-      - terraform -chdir="./network" init
       - terraform -chdir="./ecs" init
-      - terraform -chdir="./network" validate
-      - terraform -chdir="./ecs" validate
-      - terraform -chdir="./network" plan
-      - terraform -chdir="./ecs" plan
+      - terraform -chdir="./ecs" validate     
+      - terraform -chdir="./ecs" --auto-approve
