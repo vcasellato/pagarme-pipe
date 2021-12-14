@@ -15,4 +15,4 @@ phases:
       - terraform --version
       - terraform -chdir="./ecs" init
       - terraform -chdir="./ecs" validate     
-      - terraform -chdir="./ecs" --auto-approve
+      - terraform -chdir="./ecs" plan
