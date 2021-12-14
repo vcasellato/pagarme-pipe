@@ -15,7 +15,7 @@ resource "aws_iam_role" "codebuild" {
         "codecommit.amazonaws.com",
         "s3.amazonaws.com",
         "ec2.amazonaws.com",
-        "vpc.amazonaws.com,
+        "vpc.amazonaws.com",
         "ecs.amazonaws.com"
         ]
       },
@@ -105,21 +105,6 @@ resource "aws_iam_policy_attachment" "ec2-policy" {
   name       = "${local.build_name}-Ec2FullAccess"
   roles      = [aws_iam_role.codebuild.name]
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
-
-  lifecycle {
-    ignore_changes = [
-      users,
-      groups,
-      roles,
-    ]
-  }
-}
-
-
-resource "aws_iam_policy_attachment" "codebuild_codecommit_policy" {
-  name       = "${local.build_name}-CodeBuildFullAccess"
-  roles      = [aws_iam_role.codebuild.name]
-  policy_arn = "arn:aws:iam::aws:policy/AWSCodeCommitFullAccess"
 
   lifecycle {
     ignore_changes = [
