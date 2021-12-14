@@ -9,7 +9,7 @@ DIAGRAMA DA PIPELINE
 
 ![MANUAL_APPROVAL](https://user-images.githubusercontent.com/43214800/145913458-cae961bc-4859-4c62-b291-6f2d1199e2f7.png)
 
-Então ao criar essa arquitetura com os codigos em sua maquina localmente, precisamos enviar os arquivos para o repo do CODECOMMIT, ao enviarmos os codigos juntamente com os buildspecs a pipeline será trigada e assim provisonará os .tfs relacionados ao ECS e a VPC, lembrando que ao testar esse codigo precisamos criar dentro do nosso user no iam as chaves para acessar o repositorio recém criado no .tf anterior. 
+Então ao criar essa arquitetura com os codigos em sua maquina localmente, precisamos enviar os arquivos para o repo do CODECOMMIT, ao enviarmos os codigos juntamente com os buildspecs a pipeline será trigada e assim provisonará os .tfs relacionados ao ECS, lembrando que ao testar esse codigo precisamos criar dentro do nosso user no iam as chaves para acessar o repositorio recém criado no .tf anterior. 
 
 No outro codigo criames uma simples aplicação com NGINX dentro do ECS juntamente com o Fargate, tambem temos o modulo de VPC que criará os recursos de network para que essa aplicação funcione normalmente.
 
