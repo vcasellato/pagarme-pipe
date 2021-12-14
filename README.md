@@ -23,5 +23,7 @@ A task definition eu decidi inserir a imagem diretamente na variavel para que el
 
 Versão terraform usada : 1.0.4
 bucket para logs do codebuild : será criado na execução, já foi deletado da conta
+
 backend : deixei local para conseguirem testar o codigo, mais deixei o .tf criado
+
 roles: apontei full access apenas para o codebuild conseguir construir o que ele precisa dentro da role dele que estão sendo criadas também.
