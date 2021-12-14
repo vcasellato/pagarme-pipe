@@ -37,7 +37,7 @@ resource "aws_lb_listener" "front_end" {
   load_balancer_arn = aws_lb.pagar_alb_test.arn
   port              = "80"
   protocol          = "HTTP"
- 
+
   default_action {
     type             = "forward"
     target_group_arn = aws_alb_target_group.pagarme_teste_tg.arn
