@@ -17,3 +17,11 @@ No outro codigo criames uma simples aplicação com NGINX dentro do ECS juntamen
 
 Ao executar criaremos um ambiente onde o ALB recebe as requests na porta 80 obs: não inseri o ACM para não demorar mais para criar o lab, teria que pagar também..
 A task definition eu decidi inserir a imagem diretamente na variavel para que ele inserisse diretamente para esse lab.
+
+
+
+
+Versão terraform usada : 1.0.4
+bucket para logs do codebuild : será criado na execução, já foi deletado da conta
+backend : deixei local para conseguirem testar o codigo, mais deixei o .tf criado
+roles: apontei full access apenas para o codebuild conseguir construir o que ele precisa dentro da role dele que estão sendo criadas também.
