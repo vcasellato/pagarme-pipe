@@ -7,7 +7,7 @@ locals {
   cpu            = 512
   memory         = 1024
 
-  
+
   desired_count = 1
 
   env             = "dev"
