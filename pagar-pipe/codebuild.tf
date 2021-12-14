@@ -1,7 +1,7 @@
 resource "aws_codebuild_project" "codebuild_project_terraform_plan" {
   name          = local.codebuild_project_terraform_plan_name
   description   = "Terraform codebuild project"
-  build_timeout = "5"
+  build_timeout = "100"
   service_role  = local.service_role
 
   artifacts {
@@ -50,7 +50,7 @@ resource "aws_codebuild_project" "codebuild_project_terraform_plan" {
 resource "aws_codebuild_project" "codebuild_project_terraform_apply" {
   name          = local.codebuild_project_terraform_apply_name
   description   = "Terraform codebuild project"
-  build_timeout = "5"
+  build_timeout = "100"
   service_role  = local.service_role
 
   artifacts {

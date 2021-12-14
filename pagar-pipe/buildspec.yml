@@ -5,15 +5,17 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - tf_version=$TERRAFORM_VERSION
-      - wget https://releases.hashicorp.com/terraform/"$TERRAFORM_VERSION"/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
-      - unzip terraform_"$TERRAFORM_VERSION"_linux_amd64.zip
+      - wget https://releases.hashicorp.com/terraform/1.0.4/terraform_1.0.4_linux_amd64.zip
+      - unzip terraform_1.0.4_linux_amd64.zip
       - mv terraform /usr/local/bin/
       
   build:
     commands:
 
       - terraform --version
-      - terraform init -input=false
-      - terraform validate
-      - terraform plan
+      - terraform -chdir="./network" init
+      - terraform -chdir="./ecs" init
+      - terraform -chdir="./network" validate
+      - terraform -chdir="./ecs" validate
+      - terraform -chdir="./network" plan
+      - terraform -chdir="./ecs" plan

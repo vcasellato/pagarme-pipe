@@ -114,3 +114,34 @@ resource "aws_iam_policy_attachment" "ec2-policy" {
 }
 
 
+resource "aws_iam_policy_attachment" "codebuild_codecommit_policy" {
+  name       = "${local.build_name}-CodeBuildFullAccess"
+  roles      = [aws_iam_role.codebuild.name]
+  policy_arn = "arn:aws:iam::aws:policy/AWSCodeCommitFullAccess"
+
+  lifecycle {
+    ignore_changes = [
+      users,
+      groups,
+      roles,
+    ]
+  }
+}
+
+
+
+resource "aws_iam_policy_attachment" "codebuild_vpc_policy" {
+  name       = "${local.build_name}-VPCFullAccess"
+  roles      = [aws_iam_role.codebuild.name]
+  policy_arn = "arn:aws:iam::aws:policy/AmazonVPCFullAccess"
+
+  lifecycle {
+    ignore_changes = [
+      users,
+      groups,
+      roles,
+    ]
+  }
+}
+
+

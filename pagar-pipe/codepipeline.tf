@@ -21,7 +21,7 @@ resource "aws_codepipeline" "tf_codepipeline" {
 
       configuration = {
         RepositoryName = local.repository_name
-        BranchName     = "main"
+        BranchName     = "master"
       }
     }
   }
