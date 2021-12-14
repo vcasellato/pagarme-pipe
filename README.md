@@ -7,5 +7,5 @@ Neste repositorio possui o codigo onde contruiremos a pipeline que executará os
 DIAGRAMA DA PIPELINE
 
 
-![salve](https://user-images.githubusercontent.com/43214800/145913179-48c70bfd-51c9-480e-b2e0-5a77d6ef7a8c.png)
+![MANUAL_APPROVAL](https://user-images.githubusercontent.com/43214800/145913458-cae961bc-4859-4c62-b291-6f2d1199e2f7.png)
 
