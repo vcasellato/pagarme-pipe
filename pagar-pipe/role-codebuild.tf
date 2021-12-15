@@ -15,7 +15,6 @@ resource "aws_iam_role" "codebuild" {
         "codecommit.amazonaws.com",
         "s3.amazonaws.com",
         "ec2.amazonaws.com",
-        "vpc.amazonaws.com",
         "ecs.amazonaws.com"
         ]
       },
