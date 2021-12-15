@@ -145,4 +145,18 @@ resource "aws_iam_policy_attachment" "codebuild_ecs_policy" {
   }
 }
 
+resource "aws_iam_policy_attachment" "codebuild_iam_policy" {
+  name       = "${local.build_name}-IAMFullAccess"
+  roles      = [aws_iam_role.codebuild.name]
+  policy_arn = "arn:aws:iam::aws:policy/IAMFullAccess"
+
+  lifecycle {
+    ignore_changes = [
+      users,
+      groups,
+      roles,
+    ]
+  }
+}
+
 
